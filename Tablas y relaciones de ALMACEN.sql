@@ -1,4 +1,3 @@
-USE proyectotablas;
 CREATE TABLE CLIENTES (
 id_clientes int NOT NULL,
 id_pedidos int NOT NULL,
