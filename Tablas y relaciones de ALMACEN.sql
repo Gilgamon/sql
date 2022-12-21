@@ -1,3 +1,5 @@
+CREATE schema ALMACEN;
+USE ALMACEN;
 CREATE TABLE CLIENTES (
 id_clientes int NOT NULL,
 id_pedidos int NOT NULL,
@@ -25,7 +27,7 @@ id_entregas int NOT NULL,
 nombre_emp char NOT NULL,
 direccion_emp varchar(200) NOT NULL,
 DNI_emp int NOT NULL,
-CONSTRAINT PK_CLASS PRIMARY KEY (id_empleado)
+CONSTRAINT PK_CLASS PRIMARY KEY (id_empleados)
 );
 CREATE TABLE ALMACEN (
 id_almacen int NOT NULL,
