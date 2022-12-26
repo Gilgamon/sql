@@ -2,74 +2,74 @@ CREATE schema ALMACEN;
 USE ALMACEN;
 CREATE TABLE CLIENTES (
 id_clientes int NOT NULL,
-id_pedidos int NOT NULL,
-nombre_cl char NOT NULL,
+id_pedidos int ,
+nombre_cl varchar(200) NOT NULL,
 direccion_cl varchar(200) NOT NULL,
 DNI_cl int ,
 CONSTRAINT PK_CLIENTES PRIMARY KEY (id_clientes)
 );
 CREATE TABLE PEDIDOS (
-id_clientes int NOT NULL,
+id_clientes int ,
 id_pedidos int NOT NULL,
-id_entregas int NOT NULL,
-id_almacen int NOT NULL,
+id_entregas int ,
+id_almacen int ,
 CONSTRAINT PK_PEDIDOS PRIMARY KEY (id_pedidos)
 );
 CREATE TABLE ENTREGAS (
-id_pedidos int NOT NULL,
+id_pedidos int ,
 id_entregas int NOT NULL,
-id_empleados int NOT NULL,
+id_empleados int ,
 CONSTRAINT PK_CLASS PRIMARY KEY (id_entregas)
 );
 CREATE TABLE EMPLEADOS (
 id_empleados int NOT NULL,
-id_entregas int NOT NULL,
-nombre_emp char NOT NULL,
-direccion_emp varchar(200) NOT NULL,
-DNI_emp int NOT NULL,
+id_entregas int ,
+nombre_emp varchar(200) ,
+direccion_emp varchar(200) ,
+DNI_emp int,
 CONSTRAINT PK_CLASS PRIMARY KEY (id_empleados)
 );
 CREATE TABLE ALMACEN (
 id_almacen int NOT NULL,
-id_pedidos int NOT NULL,
-existencia int NOT NULL,
-id_articulos int NOT NULL,
+id_pedidos int ,
+existencia int ,
+id_articulos int ,
 CONSTRAINT PK_CLASS PRIMARY KEY (id_almacen)
 );
 CREATE TABLE ARTICULOS (
-id_almacen int NOT NULL,
-id_precios int NOT NULL,
+id_almacen int ,
+id_precios int ,
 nombre_art varchar(200) NOT NULL,
 id_articulos int NOT NULL,
-id_marcas int NOT NULL,
+id_marcas int ,
 CONSTRAINT PK_CLASS PRIMARY KEY (id_articulos)
 );
 CREATE TABLE PRECIOS (
-id_precios int NOT NULL,
+id_precios int Not NULL,
 precio_venta float,
 precio_compra float NOT NULL,
-id_articulos int NOT NULL,
+id_articulos int ,
 precio_act_may float ,
-id_mayoristas int NOT NULL,
+id_mayoristas int ,
 CONSTRAINT PK_CLASS PRIMARY KEY (id_precios)
 );
 CREATE TABLE MAYORISTAS (
 id_mayoristas int NOT NULL,
-nombre_may varchar(200) NOT NULL,
-id_precios int NOT NULL,
+nombre_may varchar(200) ,
+id_precios int ,
 CONSTRAINT PK_PEDIDOS PRIMARY KEY (id_mayoristas)
 );
 CREATE TABLE MARCAS (
 nombre_marcas  varchar(200) NOT NULL,
-id_categorias int NOT NULL,
+id_categorias int ,
 id_marcas int NOT NULL,
-id_articulos int NOT NULL,
+id_articulos int ,
 CONSTRAINT PK_PEDIDOS PRIMARY KEY (id_marcas)
 );
 CREATE TABLE CATEGORIAS (
 nombre_cate  varchar(200) NOT NULL,
 id_categorias int NOT NULL,
-id_marcas int NOT NULL,
+id_marcas int ,
 CONSTRAINT PK_PEDIDOS PRIMARY KEY (id_categorias)
 );
 
