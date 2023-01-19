@@ -1,5 +1,5 @@
 /* Eliminacion del Schema anterior */
-Drop schema almacen;
+DROP schema IF EXISTs almacen;
 /* creacion de schema y tablas */
 CREATE schema ALMACEN;
 USE ALMACEN;
